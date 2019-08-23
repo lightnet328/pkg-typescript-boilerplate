@@ -4,6 +4,11 @@
   "description": "nexe-typescript-boilerplate",
   "main": "src/index.ts",
   "scripts": {
+    "prebuild": "rm -rf dist bin && tsc",
+    "build:linux": "pkg dist/index.js --target linux --output bin/Linux/app",
+    "build:mac": "pkg dist/index.js --target mac --output bin/macOS/app",
+    "build:win": "pkg dist/index.js --target win --output bin/Windows/app.exe",
+    "build": "concurrently 'npm:build:*'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "lightnet328 <lightnet328@gmail.com>",
