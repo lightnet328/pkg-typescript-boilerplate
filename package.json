@@ -11,6 +11,8 @@
     "format": "eslint --fix '**/*.ts'",
     "lint": "eslint '**/*.ts'",
     "prebuild": "rm -rf dist bin && tsc",
+    "type-check:watch": "npm run type-check -- --watch",
+    "type-check": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "lightnet328 <lightnet328@gmail.com>",
